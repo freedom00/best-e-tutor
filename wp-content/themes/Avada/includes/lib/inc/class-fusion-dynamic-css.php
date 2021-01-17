@@ -271,6 +271,7 @@ class Fusion_Dynamic_CSS {
 	public function get_mode() {
 
 		if ( ! $this->mode || null === $this->mode ) {
+			$this->needs_update();
 			$this->set_mode();
 		}
 		return ( defined( 'FUSION_DISABLE_COMPILERS' ) && FUSION_DISABLE_COMPILERS ) ? 'inline' : $this->mode;
